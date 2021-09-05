@@ -21,8 +21,10 @@ func (reader rot13Reader) Read(rb []byte) (n int, e error) {
 func lot13(b byte) byte {
 	if ('A' <= b && b <= 'L') || ('a' <= b && b <= 'l') {
 		return b + 13
+	} else if ('A' <= b) && (b <= 'z') {
+		return b - 13
 	}
-	return b - 13
+	return b
 }
 
 func main() {

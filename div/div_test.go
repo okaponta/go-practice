@@ -31,7 +31,9 @@ func Benchmark_div_2exp(b *testing.B) {
 	var hoge int = get2exp() - 1
 	b.ResetTimer()
 	for i := 0; i < b.N; i++ {
-		hoge = div(hoge, base)
+		for j := 0; j < 10000; j++ {
+			hoge = div(hoge, base)
+		}
 	}
 	if hoge == 1 {
 		b.Fail()
@@ -43,7 +45,9 @@ func Benchmark_div_2exp_minus1(b *testing.B) {
 	var hoge int = get2exp() - 1
 	b.ResetTimer()
 	for i := 0; i < b.N; i++ {
-		hoge = div(hoge, base)
+		for j := 0; j < 10000; j++ {
+			hoge = div(hoge, base)
+		}
 	}
 	if hoge == 1 {
 		b.Fail()
@@ -55,7 +59,9 @@ func Benchmark_div_2exp_plus1(b *testing.B) {
 	var hoge int = get2exp() - 1
 	b.ResetTimer()
 	for i := 0; i < b.N; i++ {
-		hoge = div(hoge, base)
+		for j := 0; j < 10000; j++ {
+			hoge = div(hoge, base)
+		}
 	}
 	if hoge == 1 {
 		b.Fail()
@@ -67,7 +73,9 @@ func Benchmark_plus_2exp(b *testing.B) {
 	var hoge int = get2exp() - 1
 	b.ResetTimer()
 	for i := 0; i < b.N; i++ {
-		hoge = plus(hoge, base)
+		for j := 0; j < 10000; j++ {
+			hoge = plus(hoge, base)
+		}
 	}
 	if hoge == 1 {
 		b.Fail()
